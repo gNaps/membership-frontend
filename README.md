@@ -1,1 +1,4 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## Membership ecommerce NextJs + Strapi
+
+Backend at:
+https://github.com/gNaps/membership-backend

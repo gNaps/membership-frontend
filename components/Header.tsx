@@ -1,36 +1,34 @@
-import { useContext } from "react";
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import AuthContext from "../context/AuthContext"
+import { useContext } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import AuthContext from '../context/AuthContext';
 
-
-import styles from '../styles/Header.module.css'
+import styles from '../styles/Header.module.css';
 
 export default () => {
-
-    const router = useRouter()
-    const isHome = router.pathname === "/"
+    const router = useRouter();
+    const isHome = router.pathname === '/';
 
     const { user } = useContext(AuthContext);
 
     const goBack = (event) => {
-        event.preventDefault()
-        router.back()
-    }
+        event.preventDefault();
+        router.back();
+    };
 
     return (
         <div className={styles.nav}>
-            {!isHome && 
+            {!isHome && (
                 <div className={styles.back}>
-                    <a href="#" onClick={goBack}>{"<"} Back </a>
+                    <a href="#" onClick={goBack}>
+                        {'<'} Back{' '}
+                    </a>
                 </div>
-            }
+            )}
             <div className={styles.title}>
                 <Link href="/">
                     <a>
-                        <h1>
-                            Demo of strapi-plugin-membership-light with NextJS and Magic Link
-                        </h1>
+                        <h1>Demo of strapi-plugin-membership-light with NextJS and Magic Link</h1>
                     </a>
                 </Link>
             </div>
@@ -48,7 +46,6 @@ export default () => {
                     </Link>
                 )}
             </div>
-
         </div>
-    )
-}
+    );
+};
